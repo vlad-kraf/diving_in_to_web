@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+*.pyc
+.idea
+*.iml
+out
+gen
+venv/
+/logs/
+/.env
+__pycache__/
