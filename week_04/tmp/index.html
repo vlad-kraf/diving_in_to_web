@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AskPupkin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+
+    <header class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="#">Stackoverflow</a>
+                </li>
+                <li>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-info" style="margin-right: 10px;">LogIn</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-info">Register</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="container__main_content col-9">
+                <div class="container__question row">
+                    <div class="col-3">
+                        <img src="https://www.w3schools.com/html/img_girl.jpg" alt="My avatar" width="220" height="250">
+                        <input type="number" id="quantity" name="quantity" value="5" min="1" max="5">
+                    </div>
+                    <div class="col-9">
+                        <h2>How to build a moon park?</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <div class="container__question__tags">
+                            <ul >
+                                <li>Tags: </li>
+                                <li><a href="#">blacj-jack</a></li> 
+                                <li><a href="#">Bender</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr style="width: 100%; color: gray; height: 1px; background-color:gray;" />
+                <div class="container__answear row  border border-dark rounded">
+                    <div class="col-2">
+                        <img src="https://www.w3schools.com/html/img_girl.jpg" alt="My avatar" width="135" height="165">
+                        <input type="number" id="quantity" name="quantity" value="5" min="1" max="5">
+                    </div>
+                    <div class="col-10">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <hr style="width: 100%; color: gray; height: 1px; background-color:gray;" />
+                <div class="answear_form">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type your answear  here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Answear</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="container__side_bar col-3">
+                <div class="container__side_bar__tags border border-dark rounded">
+                    <h4>Popular Tags</h4>
+                    <ul>
+                        <li><a href="#">Courcera</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">mysql</a></li>
+                        <li><a href="#">django</a></li>
+                    </ul>                
+                </div>
+                <div class="container__side_bar__members border border-dark rounded">
+                    <h4>Best Members</h4>
+                    <ul>
+                        <li><a href="#">Mr. Freeman</a></li>
+                        <li><a href="#">Dr. House</a></li>
+                        <li><a href="#">Bender</a></li>
+                        <li><a href="#">Queen Victoria</a></li>
+                    </ul>  
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <footer class="footer">
+        <p>Simple footer <a href="#">MySite</a>.</p>
+        <p>
+        <a href="#">Back to top</a>
+        </p>
+    </footer>
+    
+</body>
+</html>
