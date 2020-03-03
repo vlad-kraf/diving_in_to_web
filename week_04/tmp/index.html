@@ -42,7 +42,10 @@
                 <div class="container__question row">
                     <div class="col-3">
                         <img src="https://www.w3schools.com/html/img_girl.jpg" alt="My avatar" width="220" height="250">
-                        <input type="number" id="quantity" name="quantity" value="5" min="1" max="5">
+                        <p id="likes">0</p>
+                        <button onclick="x = document.getElementById('likes'); x.innerHTML = (x.innerHTML | 0) + 1">Like!</button>
+                        <button onclick="x = document.getElementById('likes'); x.innerHTML = (x.innerHTML | 0) - 1">Dislike!</button>
+
                     </div>
                     <div class="col-9">
                         <h2>How to build a moon park?</h2>
@@ -62,7 +65,9 @@
                 <div class="container__answear row  border border-dark rounded">
                     <div class="col-2">
                         <img src="https://www.w3schools.com/html/img_girl.jpg" alt="My avatar" width="135" height="165">
-                        <input type="number" id="quantity" name="quantity" value="5" min="1" max="5">
+                        <p id="likes2">0</p>
+                        <button onclick="x = document.getElementById('likes2'); x.innerHTML = (x.innerHTML | 0) + 1">Like!</button>
+                        <button onclick="x = document.getElementById('likes2'); x.innerHTML = (x.innerHTML | 0) - 1">Dislike!</button>
                     </div>
                     <div class="col-10">
                         <p>
