@@ -14,4 +14,4 @@ marshmallow = "==2.15.1"
 jsonschema = "==2.6.0"
 
 [requires]
-python_version = "3.6"
+python_version = "3.8"
