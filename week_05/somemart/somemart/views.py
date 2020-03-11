@@ -1,14 +1,12 @@
 import json
 import base64
 from functools import wraps
-
 from django import forms
 from django.http import HttpResponse, JsonResponse
 from django.views import View
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.forms.models import model_to_dict
-from django.utils.decorators import method_decorator
 from django.core.validators import RegexValidator
 from django.utils.decorators import method_decorator
 from .models import Item, Review
