@@ -26,7 +26,7 @@ class BotError(Exception):
 
 
 class RedisConnector:
-    """Class encapsulates connection to Redis and methods of interaction with db, that necessary to ChatBot"""
+    """Class encapsulates connection to Redis and methods of interaction with db, that necessary for ChatBot"""
 
     def __init__(self):
         self.redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379')
@@ -96,14 +96,9 @@ def additional_keyboard():
     btn_list = types.KeyboardButton('/list')
     btn_rest = types.KeyboardButton('/reset')
     btns_off = types.KeyboardButton('/hide_keyboard')
-
     keyboard.row(btn_add, btn_list, btn_rest)
     keyboard.row(btn_help, btns_off)
     return keyboard
-
-#####################################################################################################
-#                                           End block Keyboards                                     #
-#####################################################################################################
 
 
 #####################################################################################################
@@ -130,28 +125,22 @@ def confirmation_handler(callback_query):
 
 @bot.message_handler(commands=['start'])
 def command_start(message):
-    # interrupt_check(message)
     if message.chat.id not in USERS:
         USERS[message.chat.id] = User(message)
 
     USERS[message.chat.id].update_state('NEUTRAL')
-
     keyboard = additional_keyboard()
     bot.send_message(message.chat.id, greeting_text+notice_text+commands_list, reply_markup=keyboard)
 
 
 @bot.message_handler(commands=['help'])
 def command_help(message):
-    # interrupt_check(message)
-
     USERS[message.chat.id].update_state('NEUTRAL')
     bot.send_message(message.chat.id, commands_list)
 
 
 @bot.message_handler(commands=['show_keyboard'])
 def command_show_keyboard(message):
-    # interrupt_check(message)
-
     keyboard = additional_keyboard()
     bot.send_message(
         message.chat.id,
@@ -161,8 +150,6 @@ def command_show_keyboard(message):
 
 @bot.message_handler(commands=['hide_keyboard'])
 def command_hide_keyboard(message):
-    # interrupt_check(message)
-
     markup = types.ReplyKeyboardRemove()
     bot.send_message(message.chat.id,
                      "Keyboard hidden. You can turn it on in any time by command /show_keyboard.",
@@ -174,10 +161,7 @@ def command_hide_keyboard(message):
 # Initiation of the adding new place.
 @bot.message_handler(commands=['add'])
 def command_add(message):
-    # interrupt_check(message)
-
     USERS[message.chat.id].update_state('ADD_NAME')
-
     cancel = cancel_button()
     bot.send_message(message.chat.id,
                      text='Please, type the name of new place or cancel the operation.',
@@ -187,11 +171,9 @@ def command_add(message):
 # Showing the list of recently added places.
 @bot.message_handler(commands=['list'])
 def command_list(message):
-    # interrupt_check(message)
-
     USERS[message.chat.id].update_state('NEUTRAL')
-
     last_locations = red.get_last_locations(message)
+
     if len(last_locations) == 0:
         bot.send_message(chat_id=message.chat.id, text='There are no locations')
     else:
@@ -235,7 +217,6 @@ def handle_location(message):
     if message.text is None or '/' not in message.text:
         USERS[message.chat.id].new_location = message.location
         USERS[message.chat.id].update_state('CONFIRMATION')
-
         keyboard = comfirmation_button()
         bot.send_message(chat_id=message.chat.id, text='Do you want to add new location?',
                          reply_markup=keyboard)
@@ -244,4 +225,5 @@ def handle_location(message):
         USERS[message.chat.id].update_state('START')
 
 
-bot.polling()
+if __name__ == '__main__':
+    bot.polling()
