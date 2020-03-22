@@ -7,3 +7,6 @@ venv/
 __pycache__/
 *.py[co]
 read.me
+.zip
+config.py
+/dump.rdb
