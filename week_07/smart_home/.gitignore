@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+/venv
+/pytest_cache/
+/__pycache__/
+.python-version
+.DS_Store
+*.py[co]
+read.me
+.zip
+config.py
+/dump.rdb
+
